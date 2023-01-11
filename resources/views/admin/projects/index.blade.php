@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 @section('content')
     <h1>Project</h1>
+    <a class="btn btn-success" href="{{route('admin.projects.create')}}">Crea nuovo progetto</a>
     @if(session()->has('message'))
     <div class="alert alert-success mb-3 mt-3">
         {{ session()->get('message') }}
