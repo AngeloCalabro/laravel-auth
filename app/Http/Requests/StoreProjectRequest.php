@@ -24,16 +24,19 @@ class StoreProjectRequest extends FormRequest
     public function rules()
     {
         return [
-            'name_project' => 'required|unique:posts|max:150|min:3',
-            'description' => 'nullable'
-        ];
+            'name_project' => 'required|unique:projects|max:150|min:3',
+            'description' => 'nullable',
+            'dev_lang' => 'required',
+            'cover_image' => 'nullable|image|max: 2500'
+            ];
     }
     public function messages(){
         return [
             'name_project.required' => 'Il titolo è obbligatorio.',
             'name_project.min' => 'Il titolo deve essere lungo almeno :min caratteri.',
             'name_project.max' => 'Il titolo non può superare i :max caratteri.',
-            'name_project.unique:posts' => 'Il titolo esiste già'
+            'name_project.unique:projects' => 'Il titolo esiste già',
+            'dev_lang.required' => 'Il parametro è obbligatorio'
         ];
     }
 }
