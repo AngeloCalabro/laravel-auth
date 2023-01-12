@@ -28,6 +28,10 @@
                         <label for="description" class="form-label">Description</label>
                         <textarea class="form-control" id="description" name="description">{{old('description', $project->description)}}</textarea>
                       </div>
+                      <div class="mb-3">
+                        <label for="dev_lang" class="form-label">dev lang</label>
+                        <input type="text" class="form-control" id="dev_lang" name="dev_lang" value="{{old('description', $project->description)}}">
+                      </div>
                       <div class="d-flex">
                         <div class="media me-4">
                             <img class="shadow" width="150" src="{{asset('storage/' . $project->cover_image)}}" alt="{{$project->name_project}}">
