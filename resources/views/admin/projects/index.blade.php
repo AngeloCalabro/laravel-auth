@@ -19,6 +19,7 @@
             <th scope="col">Title</th>
             <th scope="col">Description</th>
             <th scope="col">Lang Dev</th>
+            <th scope="col">Category</th>
             <th scope="col">Edit</th>
             <th scope="col">Delete</th>
         </tr>
@@ -32,6 +33,7 @@
                     </td>
                     <td>{{Str::limit($project->description,100)}}</td>
                     <td>{{($project->dev_lang)}}</td>
+                    <td>{{$project->category ? $project->category->name : 'Senza categoria'}}</td>
                     <td>
                         <a class="link-secondary" href="{{route('admin.projects.edit', $project->slug)}}" title="Edit Project">edit
                             <i class="fa-solid fa-pen"></i>
