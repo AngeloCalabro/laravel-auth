@@ -30,7 +30,7 @@
                       </div>
                       <div class="mb-3">
                         <label for="dev_lang" class="form-label">dev lang</label>
-                        <input type="text" class="form-control" id="dev_lang" name="dev_lang" value="{{old('description', $project->description)}}">
+                        <input type="text" class="form-control" id="dev_lang" name="dev_lang" value="{{old('description', $project->dev_lang)}}">
                       </div>
                       <div class="d-flex">
                         <div class="media me-4">
