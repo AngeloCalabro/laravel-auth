@@ -31,7 +31,6 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('admin.projects.create');
         $categories = Category::all();
         return view('admin.projects.create', compact('categories'));
     }
@@ -75,9 +74,9 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        return view('admin.projects.edit', compact('project'));
+        // return view('admin.projects.edit', compact('project'));
         $categories = Category::all();
-        return view('admin.projects.edit', compact('projects','categories'));
+        return view('admin.projects.edit', compact('project','categories'));
     }
 
     /**
@@ -112,6 +111,9 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
+        if($project->cover_image){
+            Storage::delete($project->cover_image);
+        }
         $project->delete();
         return redirect()->route('admin.projects.index')->with('message', "$project->name_project deleted successfully");
     }

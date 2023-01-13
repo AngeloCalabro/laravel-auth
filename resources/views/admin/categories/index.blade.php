@@ -16,7 +16,7 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Name</th>
-                <th scope="col">Posts</th>
+                <th scope="col">Projects</th>
                 <th scope="col">Edit</th>
                 <th scope="col">Delete</th>
             </tr>
