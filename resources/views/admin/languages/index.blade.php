@@ -29,8 +29,7 @@
                         {{$language->name}}
                         {{-- <a href="{{route('admin.categories.show', $language->slug)}}" title="View Ctegory">{{$language->name}}</a> --}}
                     </td>
-
-                    {{-- <td>{{count($language->posts) > 0 ? count($language->posts)  : 0}}</td> --}}
+                    <td>{{count($language->projects) > 0 ? count($language->projects)  : 0}}</td>
                     <td>
                         {{-- <a class="link-secondary" href="{{route('admin.languages.edit', $language->slug)}}" title="Edit Category"><i class="fa-solid fa-pen"></i></a> --}}
                     </td>

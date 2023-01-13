@@ -7,6 +7,7 @@ use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Project;
 use App\Models\Category;
+use App\Models\Language;
 
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -32,7 +33,8 @@ class ProjectController extends Controller
     public function create()
     {
         $categories = Category::all();
-        return view('admin.projects.create', compact('categories'));
+        $languages = Language::all();
+        return view('admin.projects.create', compact('categories', 'languages'));
     }
 
     /**
@@ -76,7 +78,8 @@ class ProjectController extends Controller
     {
         // return view('admin.projects.edit', compact('project'));
         $categories = Category::all();
-        return view('admin.projects.edit', compact('project','categories'));
+        $languages = Language::all();
+        return view('admin.projects.edit', compact('project','categories', 'languages'));
     }
 
     /**
