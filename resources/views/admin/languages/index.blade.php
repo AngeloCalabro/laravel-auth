@@ -3,7 +3,7 @@
 @section('content')
     <h1>Language</h1>
     <div class="text-end">
-        <a class="btn btn-success" href="">Crea nuovo Language</a>
+        <a class="btn btn-success" href="">Crea nuovo linguaggio</a>
     </div>
 
     @if(session()->has('message'))

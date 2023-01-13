@@ -33,7 +33,13 @@
                     </td>
                     <td>{{Str::limit($project->description,100)}}</td>
                     <td>
-                        {{$project->languages}}
+                            @if (count($project->languages))
+                                @foreach ($project->languages as $language)
+                                    <div class="text-center">{{$language->name}}</div>
+                                @endforeach
+                            @else
+                            <small class="text-center">Senza linguaggio</small>
+                            @endif
                     </td>
                     <td>{{$project->category ? $project->category->name : 'Senza categoria'}}</td>
                     <td>
