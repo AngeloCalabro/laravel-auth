@@ -22,7 +22,7 @@ class ProjectTableSeeder extends Seeder
             $project->name_project = $faker->words(3, true);
             $project->slug = Str::slug($project->name_project, '-');
             $project->description = $faker->paragraph();
-            $project->dev_lang = $faker->words(3, true);
+            // $project->dev_lang = $faker->words(3, true);
             $project->framework = $faker->words(4, true);
             $project->team = $faker->firstName();
             $project->link_git = $faker->url();

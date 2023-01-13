@@ -30,7 +30,7 @@
                     </td>
                     <td>{{count($category->posts)}}</td>
                     <td>
-                        <a class="link-secondary" href="{{route('admin.categories.edit', $category->slug)}}" title="Edit Category">edit
+                        <a class="link-secondary" href="{{route('admin.categories.edit', $category->slug)}}" title="Edit Category">
                             <i class="fa-solid fa-pen"></i>
                         </a>
                     </td>
@@ -38,7 +38,7 @@
                          <form action="{{route('admin.categories.destroy', $category->slug)}}" method="POST">
                         @csrf
                         @method('DELETE')
-                         <button type="submit" class="delete-button btn btn-danger ms-3" data-item-title="{{$category->name}}">delete
+                         <button type="submit" class="delete-button btn btn-danger ms-3" data-item-title="{{$category->name}}">
                             <i class="fa-solid fa-trash-can"></i>
                         </button>
                      </form>

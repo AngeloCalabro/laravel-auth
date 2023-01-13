@@ -32,10 +32,12 @@
                         <a href="{{route('admin.projects.show', $project->slug)}}" title="View Post">{{$project->name_project}}</a>
                     </td>
                     <td>{{Str::limit($project->description,100)}}</td>
-                    <td>{{($project->dev_lang)}}</td>
+                    <td>
+                        {{-- {{$project->dev_lang}} --}}
+                    </td>
                     <td>{{$project->category ? $project->category->name : 'Senza categoria'}}</td>
                     <td>
-                        <a class="link-secondary" href="{{route('admin.projects.edit', $project->slug)}}" title="Edit Project">edit
+                        <a class="link-secondary" href="{{route('admin.projects.edit', $project->slug)}}" title="Edit Project">
                             <i class="fa-solid fa-pen"></i>
                         </a>
                     </td>
@@ -43,7 +45,7 @@
                         <form action="{{route('admin.projects.destroy', $project->slug)}}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="delete-button btn btn-danger ms-3" data-item-title="{{$project->name_project}}">delete
+                        <button type="submit" class="delete-button btn btn-danger ms-3" data-item-title="{{$project->name_project}}">
                             <i class="fa-solid fa-trash-can"></i>
                         </button>
                      </form>

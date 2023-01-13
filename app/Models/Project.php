@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Project extends Model
 {
     use HasFactory;
-    protected $fillable = ['name_project', 'slug', 'description','cover_image', 'dev_lang','category_id'];
+    protected $fillable = ['name_project', 'slug', 'description','cover_image','category_id'];
 
     public static function generateSlug($name_project)
     {
