@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class Project extends Model
 {
     use HasFactory;
-    protected $fillable = ['name_project', 'slug', 'description','cover_image','category_id', 'language'];
+    protected $fillable = ['name_project', 'slug', 'description','cover_image','category_id'];
 
     public static function generateSlug($name_project)
     {
@@ -23,6 +23,6 @@ class Project extends Model
     }
     public function languages():BelongsToMany
     {
-        return $this->belongsToMany(Project::class);
+        return $this->belongsToMany(Language::class);
     }
 }

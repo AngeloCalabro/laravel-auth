@@ -28,7 +28,8 @@ class StoreProjectRequest extends FormRequest
             'description' => 'nullable',
             // 'dev_lang' => 'required',
             'cover_image' => 'nullable|image|max: 2500',
-            'category_id' => 'nullable|exists:categories,id'
+            'category_id' => 'nullable|exists:categories,id',
+            'language_id' => 'nullable|exists:languages,id'
             ];
     }
     public function messages(){

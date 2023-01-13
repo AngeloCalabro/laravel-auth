@@ -16,8 +16,7 @@
         <tr>
             <th scope="col">#</th>
             <th scope="col">Name</th>
-            <th scope="col">Posts</th>
-            <th scope="col">Edit</th>
+            <th scope="col">Project</th>
             <th scope="col">Delete</th>
         </tr>
         </thead>
@@ -27,11 +26,9 @@
                     <th scope="row">{{$language->id}}</th>
                     <td>
                         {{$language->name}}
-                        {{-- <a href="{{route('admin.categories.show', $language->slug)}}" title="View Ctegory">{{$language->name}}</a> --}}
                     </td>
-                    <td>{{count($language->projects) > 0 ? count($language->projects)  : 0}}</td>
                     <td>
-                        {{-- <a class="link-secondary" href="{{route('admin.languages.edit', $language->slug)}}" title="Edit Category"><i class="fa-solid fa-pen"></i></a> --}}
+                        {{count($language->projects) > 0 ? count($language->projects)  : 0}}
                     </td>
                     <td>
                         <form action="{{route('admin.languages.destroy', $language->slug)}}" method="POST">

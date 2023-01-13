@@ -41,6 +41,20 @@
                             @enderror
                         </div>
                     </div>
+
+                    <div class="mb-3">
+                        <label for="languages" class="form-label">Seleziona linguaggio</label><br>
+                        @foreach ($languages as $language)
+                            <input type="checkbox" name="languages[]" value="{{$language->id}}"
+                            {{ $language->id == old('languages') ? 'selected' : '' }}>
+
+                            <span class="text-capitalize">{{$language->name}}</span><br>
+                        @endforeach
+                        {{-- @error('languages')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror --}}
+                      </div>
+
                     <div class="mb-3">
                         <label for="category_id" class="form-label">Seleziona categoria</label>
                         <select name="category_id" id="category_id" class="form-control @error('category_id') is-invalid @enderror">

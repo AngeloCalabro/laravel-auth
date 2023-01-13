@@ -18,7 +18,7 @@
             <th scope="col">#</th>
             <th scope="col">Title</th>
             <th scope="col">Description</th>
-            <th scope="col">Lang Dev</th>
+            <th scope="col">Language</th>
             <th scope="col">Category</th>
             <th scope="col">Edit</th>
             <th scope="col">Delete</th>
@@ -33,7 +33,7 @@
                     </td>
                     <td>{{Str::limit($project->description,100)}}</td>
                     <td>
-                        {{-- {{$project->dev_lang}} --}}
+                        {{$project->languages}}
                     </td>
                     <td>{{$project->category ? $project->category->name : 'Senza categoria'}}</td>
                     <td>

@@ -13,7 +13,7 @@ class StoreLanguageRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,6 +23,12 @@ class StoreLanguageRequest extends FormRequest
      */
     public function rules()
     {
+        return [
+            'name' => 'nullable'
+        ];
+    }
+
+    public function messages(){
         return [
             //
         ];

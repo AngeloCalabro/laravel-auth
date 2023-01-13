@@ -54,6 +54,10 @@ class ProjectController extends Controller
         }
 
         $new_project = Project::create($data);
+
+        if($request->has('languages')){
+            $new_project->languages()->attach($request->languages);
+        }
         return redirect()->route('admin.projects.show', $new_project->slug);
     }
 
@@ -76,7 +80,6 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        // return view('admin.projects.edit', compact('project'));
         $categories = Category::all();
         $languages = Language::all();
         return view('admin.projects.edit', compact('project','categories', 'languages'));
@@ -103,6 +106,9 @@ class ProjectController extends Controller
             $data['cover_image'] = $path;
         }
         $project->update($data);
+
+        $project->languages()->sync($request->languages);
+
         return redirect()->route('admin.projects.index')->with('message', "$project->name_project updated successfully");
     }
 

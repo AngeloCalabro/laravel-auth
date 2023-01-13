@@ -16,7 +16,7 @@ class Language extends Model
     {
         return Str::slug($name, '-');
     }
-    public function project():BelongsToMany{
+    public function projects():BelongsToMany{
         return $this->belongsToMany(Project::class);
     }
 }

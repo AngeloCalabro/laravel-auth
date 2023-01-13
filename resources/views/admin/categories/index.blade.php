@@ -28,7 +28,7 @@
                     <td>
                         <a href="{{route('admin.categories.show', $category->slug)}}" title="View Ctegory">{{$category->name}}</a>
                     </td>
-                    <td>{{count($category->posts)}}</td>
+                    <td>{{count($category->projects)}}</td>
                     <td>
                         <a class="link-secondary" href="{{route('admin.categories.edit', $category->slug)}}" title="Edit Category">
                             <i class="fa-solid fa-pen"></i>
