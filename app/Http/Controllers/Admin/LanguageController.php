@@ -37,7 +37,9 @@ class LanguageController extends Controller
      */
     public function store(StoreLanguageRequest $request)
     {
-        //
+        $val = $request->validated();
+        $slug = Language::generateSlug($request->name);
+        $val['slug'] = $slug;
     }
 
     /**
@@ -71,7 +73,10 @@ class LanguageController extends Controller
      */
     public function update(UpdateLanguageRequest $request, Language $language)
     {
-        //
+        $val_data = $request->validated();
+        $slug = Language::generateSlug($request->name);
+        $language->update($val_data);
+        return redirect()->back()->with('message', 'Language $slug update successfully');
     }
 
     /**
@@ -82,6 +87,7 @@ class LanguageController extends Controller
      */
     public function destroy(Language $language)
     {
-        //
+        $language->delete();
+        return redirect()->back()->back()->with('message', 'Language $language->name removed successfully');
     }
 }

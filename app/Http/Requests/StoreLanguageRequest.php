@@ -24,7 +24,7 @@ class StoreLanguageRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'nullable'
+            'name' => 'required|unique:languages'
         ];
     }
 
