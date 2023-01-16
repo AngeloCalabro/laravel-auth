@@ -107,7 +107,13 @@ class ProjectController extends Controller
         }
         $project->update($data);
 
-        $project->languages()->sync($request->languages);
+        // dd($request->languages);
+        if($request->has('languages')){
+            $project->languages()->sync($request->languages);
+        } else {
+            $project->languages()->sync([]);
+        }
+
 
         return redirect()->route('admin.projects.index')->with('message', "$project->name_project updated successfully");
     }

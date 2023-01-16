@@ -43,12 +43,21 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="languages" class="form-label">Seleziona linguaggio</label><br>
+                        <label for="languages" class="form-label">Seleziona linguaggio</label>
                         @foreach ($languages as $language)
-                            <input type="checkbox" name="languages[]" value="{{$language->id}}"
-                            {{ $language->id == old('languages') ? 'selected' : '' }}>
 
-                            <span class="text-capitalize">{{$language->name}}</span><br>
+                            <input type="checkbox" class="form-check-input" name="languages[]" id="{{$language->slug}}" value="{{$language->id}}"
+                            {{in_array( $language->id, old("language", []) ) ? 'checked' : ''}}>
+
+                            <span class="text-capitalize">{{$language->name}}</span>
+
+                            {{-- @if (old("language"))
+                                <input type="checkbox" class="form-check-input" id="{{$language->slug}}" name="language[]" value="{{$language->id}}" {{in_array( $language->id, old("language", []) ) ? 'checked' : ''}}>
+                            @else
+                                <input type="checkbox" class="form-check-input" id="{{$language->slug}}" name="language[]" value="{{$language->id}}" {{$project->language->contains($language) ? 'checked' : ''}}>
+                            @endif
+                            <label class="form-check-label" for="{{$language->slug}}">{{$language->name}}</label> --}}
+
                         @endforeach
                         {{-- @error('languages')
                             <div class="invalid-feedback">{{ $message }}</div>
