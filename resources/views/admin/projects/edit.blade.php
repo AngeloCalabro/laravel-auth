@@ -47,22 +47,11 @@
                         @foreach ($languages as $language)
 
                             <input type="checkbox" class="form-check-input" name="languages[]" id="{{$language->slug}}" value="{{$language->id}}"
-                            {{in_array( $language->id, old("language", []) ) ? 'checked' : ''}}>
+                            {{old('languages', $project->languages) ? (old('languages', $project->languages)->contains($language->id)) ? 'checked' : '' : ''}}>
 
                             <span class="text-capitalize">{{$language->name}}</span>
-
-                            {{-- @if (old("language"))
-                                <input type="checkbox" class="form-check-input" id="{{$language->slug}}" name="language[]" value="{{$language->id}}" {{in_array( $language->id, old("language", []) ) ? 'checked' : ''}}>
-                            @else
-                                <input type="checkbox" class="form-check-input" id="{{$language->slug}}" name="language[]" value="{{$language->id}}" {{$project->language->contains($language) ? 'checked' : ''}}>
-                            @endif
-                            <label class="form-check-label" for="{{$language->slug}}">{{$language->name}}</label> --}}
-
                         @endforeach
-                        {{-- @error('languages')
-                            <div class="invalid-feedback">{{ $message }}</div>
-                        @enderror --}}
-                      </div>
+                    </div>
 
                     <div class="mb-3">
                         <label for="category_id" class="form-label">Seleziona categoria</label>
@@ -76,7 +65,7 @@
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
-                      <button type="submit" class="btn btn-success">Submit</button>
+                      <button type="submit" class="btn btn-success">Salva</button>
                       <button type="reset" class="btn btn-primary">Reset</button>
                 </form>
             </div>
