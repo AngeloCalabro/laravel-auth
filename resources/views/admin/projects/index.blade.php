@@ -32,14 +32,15 @@
                         <a href="{{route('admin.projects.show', $project->slug)}}" title="View Post">{{$project->name_project}}</a>
                     </td>
                     <td>{{Str::limit($project->description,100)}}</td>
-                    <td>
-                            @if (count($project->languages))
-                                @foreach ($project->languages as $language)
-                                    <div class="text-center">{{$language->name}}</div>
-                                @endforeach
-                            @else
-                            <small class="text-center">Senza linguaggio</small>
-                            @endif
+                    <td class="text-center">
+                        {{count($project->languages)}}
+                        {{-- @if (count($project->languages))
+                            @foreach ($project->languages as $language)
+                                <div class="text-center">{{$language->name}}</div>
+                            @endforeach
+                        @else
+                        <small class="text-center">Senza linguaggio</small>
+                        @endif --}}
                     </td>
                     <td>{{$project->category ? $project->category->name : 'Senza categoria'}}</td>
                     <td>
